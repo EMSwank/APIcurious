@@ -22,9 +22,9 @@ class GithubUser
     end
   end
 
-   def raw_push_events
+   def raw_pushes
     github_service.get_url("users/#{nickname}/events").find_all do |event|
-      event[:type] == 'PushEvent'
+      event[:type] == 'Pushes'
     end
   end
 end
