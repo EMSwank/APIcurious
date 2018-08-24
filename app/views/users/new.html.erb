@@ -1,4 +1,9 @@
 <% if current_user %>
-  Welcome <%= current_user.name %>
+  <h2> Welcome <%= current_user.name %> </h2>
+  <div>
+  <h3>Number of followers</h3>
+  <p><%= current_user %> </p>
+  </div>
 <% else %>
-  <%= <%= link_to  "Sign in with Github", "/auth/github" %>
+  <h2>Welcome! <%= link_to  "Sign in with Github", github_login_path %></h2>
+<% end %>
