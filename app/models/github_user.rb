@@ -5,7 +5,7 @@ class GithubUser
   end
 
    def commit_count
-    push_events.sum(&:commit_count)
+    pushes.sum(&:commit_count)
   end
 
    def repos
@@ -17,7 +17,7 @@ class GithubUser
    private
 
 ]   def pushes
-    raw_push_events.map do |raw_event|
+    raw_pushes.map do |raw_event|
       Pushes.new(raw_event)
     end
   end
