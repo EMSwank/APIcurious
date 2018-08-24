@@ -42,7 +42,8 @@ feature "User sees basic info" do
     expect(current_path).to eq(root_path)
     expect(page).to have_content("Eliot")
     expect(page).to have_link("Log out")
-    expect(page).to have_content(stub_omni[:extra][:raw_info][:avatar_url])
+    save_and_open_page
+    expect(page).to have_css("img[src*=\"#{stub_omniauth[:extra][:raw_info][:avatar_url]}\"]")
   end
 end
 =begin Authenticate with my github account

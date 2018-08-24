@@ -20,6 +20,9 @@ ActiveRecord::Schema.define(version: 2018_08_21_225834) do
     t.string "uid"
     t.string "name"
     t.string "token"
+    t.string "avatar_url"
+    t.integer "follower_count"
+    t.integer "following_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
