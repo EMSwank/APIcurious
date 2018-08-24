@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def new
-    @user = GithubUser.new(current_user)
+    binding.pry
+    @user = GithubUser.new(current_user.nickname)
   end
 end
