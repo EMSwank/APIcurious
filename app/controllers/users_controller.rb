@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def new
-    @user = current_user
+    @user = GithubUser.new(current_user)
   end
 end

@@ -16,7 +16,7 @@ class GithubUser
 
    private
 
-]   def pushes
+   def pushes
     raw_pushes.map do |raw_event|
       Pushes.new(raw_event)
     end
