@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2018_08_21_225834) do
     t.string "provider"
     t.string "uid"
     t.string "name"
+    t.string "nickname"
     t.string "token"
     t.string "avatar_url"
     t.integer "follower_count"

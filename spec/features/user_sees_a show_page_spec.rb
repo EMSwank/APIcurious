@@ -44,6 +44,10 @@ feature "User sees basic info" do
     expect(page).to have_link("Log out")
     save_and_open_page
     expect(page).to have_css("img[src*=\"#{stub_omniauth[:extra][:raw_info][:avatar_url]}\"]")
+    expect(page).to have_content(stub_omniauth[:extra][:raw_info][:followers]) 
+    expect(page).to have_content(stub_omniauth[:extra][:raw_info][:following]) 
+
+    expect(page).to have_css('.commits')
   end
 end
 =begin Authenticate with my github account

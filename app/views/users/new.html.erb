@@ -6,6 +6,10 @@
 <p>Following: <%= @user.following_count %></p>
 </div>
 
+<div class="commits">
+Recent commit history:
+<%= pluralize(@user.commit_count, "commit") %> in <%= pluralize(@user.recent_repos.count, "repository") %>
+</div>
 <% else %>
   <h2>Welcome! <%= link_to  "Sign in with Github", github_login_path %></h2>
 <% end %>
