@@ -1,0 +1,15 @@
+<% if current_user %>
+  <h2> Welcome <%= current_user.name %> </h2>
+  <img src="<%= @user.avatar_url%>", height="42" width="42">
+  <div>
+<p>Followers: <%= @user.follower_count %></p>
+<p>Following: <%= @user.following_count %></p>
+</div>
+
+<div class="commits">
+Recent commit history:
+<%= pluralize(@user.commit_count, "commit") %> in <%= pluralize(@user.recent_repos.count, "repository") %>
+</div>
+<% else %>
+  <h2>Welcome! <%= link_to  "Sign in with Github", github_login_path %></h2>
+<% end %>
